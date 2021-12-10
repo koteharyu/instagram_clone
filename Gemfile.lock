@@ -1,4 +1,21 @@
 GIT
+  remote: https://github.com/kaminari/kaminari
+  revision: 9623197dfd825c131eccf976db8d43882d0791de
+  specs:
+    kaminari (1.2.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
+      actionview
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
+      activerecord
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
+
+GIT
   remote: https://github.com/redis-store/redis-actionpack.git
   revision: 39be2b861c76a5f104609d6c75071c85508f809d
   specs:
@@ -362,6 +379,7 @@ DEPENDENCIES
   font-awesome-sass
   html2slim
   jbuilder (~> 2.7)
+  kaminari!
   listen (~> 3.3)
   pg (~> 1.1)
   pry-byebug
