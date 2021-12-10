@@ -1,7 +1,5 @@
-= form_with model: @post do |f|
-  .form-group
-    = f.label :body
-    = f.text_area :body, class: 'form-control'
-  .form-group
-    = f.file_field :images, multiple: true, class: 'form-control'
-  = f.submit class: 'btn btn-primary'
+.row
+  .col-md-6.col-12.offset-3
+    .card
+      .card-body
+        = render 'form', post: @post
