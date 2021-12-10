@@ -21,5 +21,7 @@ class Post < ApplicationRecord
   validates :body, presence: true, length: { maximum: 500 }
   validates :images, presence: true
 
+  mount_uploaders :images, PostImagesUploader
+
   belongs_to :user
 end
