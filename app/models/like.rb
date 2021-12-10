@@ -20,6 +20,9 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Like < ApplicationRecord
+
+  validates :user_id, uniqueness: { scope: :post_id }
+
   belongs_to :post
   belongs_to :user
 end
