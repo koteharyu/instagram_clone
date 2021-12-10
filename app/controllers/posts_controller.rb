@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.includes(:user).order(created_at: :desc).page(params[:page])
+    @random_users = User.random(5)
   end
 
   def show

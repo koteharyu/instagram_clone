@@ -28,6 +28,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
 
+  scope :random, -> (count) { all.sample(count) }
+
   def own?(object)
     id == object.user_id
   end
