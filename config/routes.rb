@@ -1,3 +1,6 @@
+# == Route Map
+#
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'posts#index'
@@ -8,5 +11,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'user_sessions#destroy'
 
   resources :users, only: %i[create]
-  resources :posts
+  resources :posts, shallow: true do
+    resources :comments
+  end
 end
