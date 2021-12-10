@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = if current_user
-               current_user.feed.includes(:user).page(params[:page])
+               current_user.feed.includes(:user).order(created_at: :desc).page(params[:page])
              else
                Post.all.includes(:user).order(created_at: :desc).page(params[:page])
              end
