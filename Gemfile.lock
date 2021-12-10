@@ -97,6 +97,8 @@ GEM
     e2mmap (0.1.0)
     erubi (1.10.0)
     ffi (1.15.4)
+    font-awesome-sass (5.15.1)
+      sassc (>= 1.11)
     globalid (1.0.0)
       activesupport (>= 5.0)
     hpricot (0.8.6)
@@ -284,6 +286,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  font-awesome-sass
   html2slim
   jbuilder (~> 2.7)
   listen (~> 3.3)
