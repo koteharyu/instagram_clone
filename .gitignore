@@ -8,6 +8,7 @@
 /.bundle
 /vendor
 .vscode
+dump.rdb
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
