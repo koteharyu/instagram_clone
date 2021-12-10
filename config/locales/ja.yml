@@ -1,8 +1,15 @@
 ja:
   activerecord:
     models:
+      user: 'ユーザー'
 
     attributes:
+      user:
+        username: 'ユーザー名'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: '確認用'
+
 
   attributes:
     created_at: '作成日時'
