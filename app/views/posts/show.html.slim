@@ -1,10 +1,7 @@
 .post-detail.card
-  .image-box
-    / .swiper-container
-    /   .swiper-wrapper
-    /     - @post.images.each do |image|
-    /       .swiper-slide
-    /         = image_tag image.url
+  .image-box.slide.my-5
+      - @post.images.each do |image|
+          = image_tag image.url
   .image-info-box
     .profile-box.p-3
       .d-flex.align-items-center
@@ -31,7 +28,7 @@
       hr
       .row.no-gutters
         .col-2
-          = image_tag '/profile-placeholder.png', size: '40x40', class: 'rounded-circle'
+          = image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circle'
         .col-10
           | ダミーコメントダミーコメントダミーコメント
     hr.m-0
@@ -40,3 +37,6 @@
         input type="text" class="form-control input-comment-body" placeholder="コメント"
         button type="submit" class="btn btn-primary btn-raised"
           | 投稿
+
+script
+  | $('.slide').slick();
