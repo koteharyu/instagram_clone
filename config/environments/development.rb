@@ -71,7 +71,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.session_store :redis_store, { servers: 'redis://localhost:6379', expire_after: 1.day }
+  config.session_store :redis_store, servers: 'redis://localhost:6379/', expire_after: 1.day
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
