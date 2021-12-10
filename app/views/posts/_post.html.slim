@@ -8,6 +8,8 @@
           = icon 'far', 'edit', class: 'fa-lg'
         = link_to post_path(post), method: :delete, data: { confirm: "are u sure? "} do
           = icon "far", "trash-alt", class: "fa-lg ml-2"
+      - if current_user && !current_user&.own?(post)
+        = render 'like_area', post: post
   = link_to post_path(post) do
     = image_tag post.images.first.url, class: 'card-img-top'
   .card-body
