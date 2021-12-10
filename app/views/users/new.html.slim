@@ -1,0 +1,16 @@
+.card.mb-3.mt-5
+  = form_with model: @user do |f|
+    = render 'shared/error_messages', object: @user
+    .form-group
+      = f.text_field :username, class: 'form-control', placeholder: "user name"
+    .form-group
+      = f.email_field :email, class: 'form-control', placeholder: "email"
+    .form-group
+      = f.password_field :password, class: 'form-control', placeholder: "password"
+    .form-group
+      = f.password_field :password_confirmation, class: 'form-control', placeholder: "password_confirmation"
+    = f.submit "sign up", class: "btn btn-primary"
+
+.card
+  .card-body
+    = link_to "log in", login_path
