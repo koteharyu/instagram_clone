@@ -39,3 +39,5 @@ app/assets/images
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+/db/fixtures

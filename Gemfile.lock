@@ -114,6 +114,8 @@ GEM
     diff-lcs (1.4.4)
     e2mmap (0.1.0)
     erubi (1.10.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     faraday (1.8.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -356,6 +358,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   carrierwave
+  faker
   font-awesome-sass
   html2slim
   jbuilder (~> 2.7)
