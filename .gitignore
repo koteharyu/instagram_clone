@@ -25,7 +25,10 @@ dump.rdb
 !/storage/.keep
 
 /public/assets
+/public/uploads
 .byebug_history
+
+app/assets/images
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
@@ -36,3 +39,5 @@ dump.rdb
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+/db/fixtures

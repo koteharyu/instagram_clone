@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      post: '投稿'
 
     attributes:
       user:
@@ -9,6 +10,9 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: '確認用'
+      post:
+        body: '本文'
+        images: '画像'
 
 
   attributes:
