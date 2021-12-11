@@ -8,3 +8,7 @@
           = @user.username
         .profile.text-center
           = render 'users/follow_area', user: @user
+        hr
+        .row
+          - @user.posts.each do |post|
+            = render 'posts/thumbnail_post', post: post
