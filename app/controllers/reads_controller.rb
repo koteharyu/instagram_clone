@@ -5,7 +5,7 @@ class ReadsController < ApplicationController
     @notification = current_user.notifications.find(params[:notification_id])
     if @notification.unread?
       @notification.read!
-      redirect_to root_path
+      redirect_to appropriate_path
     end
   end
 end

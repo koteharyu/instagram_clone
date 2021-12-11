@@ -20,6 +20,8 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Notification < ApplicationRecord
+  include Rails.application.routes.url_helpers
+
   belongs_to :user
   belongs_to :notifiable, polymorphic: true
 
@@ -35,6 +37,17 @@ class Notification < ApplicationRecord
       'liked_to_own_post'
     when 'Relationship'
       'followed_me'
+    end
+  end
+
+  def appropriate_path
+    case self.notifiable_type
+    when 'Comment'
+      post_path(self.notifiable.post, anchor: "comment-#{notifiable.id}")
+    when 'Like'
+      post_path(self.notifiable.post)
+    when 'Relationship'
+      user_path(self.notifiable.followed)
     end
   end
 end
