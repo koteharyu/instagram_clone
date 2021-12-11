@@ -27,5 +27,6 @@ Rails.application.routes.draw do
   namespace :mypage do
     resource :account, only: %i[edit update]
     resources :notifications, only: %i[index]
+    resource :setting_notification, only: %i[edit update]
   end
 end
