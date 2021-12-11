@@ -11,8 +11,7 @@
         hr
         .row
           - if @user.posts.present?
-            - @user.posts.each do |post|
-              = render 'posts/thumbnail_post', post: post
+            = render partial: 'posts/thumbnail_post', collection: @user.posts
           - else
             .mx-auto
               p.font-weight-bold 投稿がありません。
