@@ -5,7 +5,7 @@ class SearchPostsForm
   attribute :body, :string
 
   def search
-    posts = Post.distinct
+    posts = Post.all
     posts = posts.body_contain(body) if body.present?
     posts
   end
