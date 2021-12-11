@@ -10,5 +10,9 @@
           = render 'users/follow_area', user: @user
         hr
         .row
-          - @user.posts.each do |post|
-            = render 'posts/thumbnail_post', post: post
+          - if @user.posts.present?
+            - @user.posts.each do |post|
+              = render 'posts/thumbnail_post', post: post
+          - else
+            .mx-auto
+              p.font-weight-bold 投稿がありません。
