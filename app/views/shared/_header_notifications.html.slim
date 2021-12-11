@@ -3,6 +3,6 @@
     = render "shared/#{notification.call_appropriate_partial}", notification: notification
   - if current_user.notifications.count > 10
     = link_to "check all notifications", mypage_notifications_path, class: "dropdown-item justify-content-center"
-  - else
-    .dropdown-item
-      | any notifications
+- else
+  .dropdown-item
+    | any notifications

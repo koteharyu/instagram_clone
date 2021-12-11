@@ -1,8 +1,8 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-white
   = link_to 'Instagram_clone', root_path, class: 'navbar-brand'
-  button.navbar-toggeler aria-controls="navbarTogglerDemo2" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarTogglerDemo2" data-togglel="collapse" type="button"
+  button.navbar-toggler aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarTogglerDemo02" data-toggle="collapse" type="button"
     span.navbar-toggler-icon
-  #navbarogglerDemo2.collapse.navbar-collapse
+  #navbarTogglerDemo02.collapse.navbar-collapse
     = render 'posts/search_form', search_form: @search_form
     ul.navbar-nav.mt-2.mt-lg-0
       li.nav-item
