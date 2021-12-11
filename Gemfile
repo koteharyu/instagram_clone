@@ -35,8 +35,7 @@ gem 'rails-i18n'
 gem 'carrierwave'
 gem 'kaminari', git: 'https://github.com/kaminari/kaminari'
 gem 'config'
-gem 'sidekiq'
-gem 'sinatra'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,7 +48,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'faker'
-  gem 'letter_opener_web'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -61,6 +61,9 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'letter_opener_web'
+  gem 'sidekiq'
+  gem 'sinatra'
 end
 
 group :test do
