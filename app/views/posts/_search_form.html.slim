@@ -1,3 +1,5 @@
 = form_with model: search_form, url: search_posts_path, scope: :q, method: :get, class: "form-inline my-2 my-lg-0 mr-auto" do |f|
-  = f.search_field :body, class: 'form-control mr-sm-2', placeholder: 'search word'
+  = f.search_field :post_body, class: 'form-control mr-sm-2', placeholder: 'posts word'
+  = f.search_field :comment_body, class: 'form-control mr-sm-2', placeholder: 'comment word'
+  = f.search_field :username, class: 'form-control mr-sm-2', placeholder: 'username word'
   = f.submit 'Search', class: 'btn btn-secondary'

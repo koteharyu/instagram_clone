@@ -28,5 +28,7 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
 
-  scope :body_contain, -> (word) { where("body Like ?", "%#{word}%") }
+  scope :post_body_contain, -> (word) { where("body Like ?", "%#{word}%") }
+  scope :comment_body_contain, -> (word) { joins(:comments).where('comments.body Like ?', "%#{word}%")}
+  scope :username_contain, -> (word) { joins(:user).where('username Like ?', "%#{word}%") }
 end

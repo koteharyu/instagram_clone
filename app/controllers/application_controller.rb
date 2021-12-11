@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
   end
 
   def search_posts_params
-    params.fetch(:q, {}).permit(:body)
+    params.fetch(:q, {}).permit(:post_body, :comment_body, :username)
   end
 end
