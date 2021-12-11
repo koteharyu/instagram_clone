@@ -15,6 +15,8 @@
 #  index_relationships_on_follower_id_and_followed_id  (follower_id,followed_id) UNIQUE
 #
 class Relationship < ApplicationRecord
+  after_create_commit :create_notification
+
   validates :follower_id, presence: true
   validates :followed_id, presence: true
   validates :follower_id, uniqueness: { scope: :followed_id }
@@ -22,4 +24,10 @@ class Relationship < ApplicationRecord
   belongs_to :follower, class_name: "User"
   belongs_to :followed, class_name: "User"
   has_one :notification, as: :notifiable, dependent: :destroy
+
+  private
+
+  def create_notification
+    Notification.create(notifiable: self, user: follower)
+  end
 end

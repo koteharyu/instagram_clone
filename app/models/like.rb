@@ -20,10 +20,17 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Like < ApplicationRecord
+  after_create_commit :create_notification
 
   validates :user_id, uniqueness: { scope: :post_id }
 
   belongs_to :post
   belongs_to :user
   has_one :notification, as: :notifiable, dependent: :destroy
+
+  private
+
+  def create_notification
+    Notification.create(notifiable: self, user: post.user)
+  end
 end
