@@ -1,0 +1,7 @@
+= link_to notification_read_path(notification), class: "dropdown-item border-bottom #{'read' if notification.read?}", method: :patch do
+  = image_tag notification.notifiable.followed.avatar.url, class: 'rounded-circle mr-1', size: '30x30'
+  object
+    = link_to notification.notifiable.followed.username, user_path(notification.notifiable.followed)
+  | があなたをフォローしました
+  .ml-auto
+    = l notification.created_at, format: :short
