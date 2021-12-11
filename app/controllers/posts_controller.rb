@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :require_login, only: %i[show new create edit update destroy]
+  before_action :require_login, only: %i[show new create edit update destroy search]
 
   def index
     @posts = if current_user
@@ -46,6 +46,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.find(params[:id])
     @post.destroy!
     redirect_to posts_path, success: 'destroy'
+  end
+
+  def search
+    @posts = @search_posts.search.includes(:user).page(params[:page])
   end
 
   private
