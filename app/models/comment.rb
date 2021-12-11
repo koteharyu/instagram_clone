@@ -20,6 +20,8 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Comment < ApplicationRecord
+  include Rails.application.routes.url_helpers
+
   after_create_commit :create_notification
 
   validates :body, presence: true, length: { maximum: 500 }
@@ -27,6 +29,14 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :post
   has_one :notification, as: :notifiable, dependent: :destroy
+
+  def partial_name
+    'commented_to_own_post'
+  end
+
+  def redirect_path
+    post_path(post, anchor: "comment-#{id}}")
+  end
 
   private
 
