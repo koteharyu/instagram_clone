@@ -9,8 +9,9 @@
   .col-md-4.col-12
     - if logged_in?
       .profile-box.mb-3
-        = image_tag 'profile-placeholder.png', size: '50x50', class: 'rounded-circle mr-1'
-        = current_user.username
+        = link_to user_path(current_user) do
+          = image_tag current_user.avatar.url, size: '50x50', class: 'rounded-circle mr-1'
+          = current_user.username
     .users-box
       .card
         .card-header
@@ -18,4 +19,4 @@
         .card-body
           = render @random_users
         .card-footer
-          = link_to 'すべて見る', '#'
+          = link_to 'すべて見る', users_path
