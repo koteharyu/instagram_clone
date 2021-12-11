@@ -30,7 +30,9 @@ Rails.application.routes.draw do
     resource :setting_notification, only: %i[edit update]
   end
 
+  require 'sidekiq/web'
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: '/letter_opener'
+    mount Sidekiq::Web, at: '/sidekiq'
   end
 end
