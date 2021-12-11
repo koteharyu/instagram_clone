@@ -26,6 +26,7 @@ dump.rdb
 
 /public/assets
 /public/uploads
+/public/images
 .byebug_history
 
 app/assets/images

@@ -5,8 +5,6 @@
   .image-info-box
     .profile-box.p-3
       .d-flex.align-items-center
-        = image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circle mr-1'
-        = @post.user.username
         - if current_user&.own?(@post)
           = link_to edit_post_path(@post), class: 'ml-auto' do
             = icon 'far', 'edit', class: 'fa-lg'
@@ -17,9 +15,11 @@
       / 投稿の本文
       .row.no-gutters
         .col-2
-          = image_tag 'profile-placeholder.png', size: '40x40', class: 'rounded-circle'
+          = image_tag @post.user.avatar.url, size: '40x40', class: 'rounded-circle'
         .col-10
-          = simple_format(@post.body)
+          = link_to @post.user.username, user_path(@post.user)
+      .row.ml-3.mt-1
+        = simple_format(@post.body)
       hr
       / コメント一覧
       = render 'comments/comments', comments: @comments

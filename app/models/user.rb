@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id               :bigint           not null, primary key
+#  avatar           :json
 #  crypted_password :string
 #  email            :string           not null
 #  salt             :string
@@ -22,6 +23,8 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
   validates :email, uniqueness: true, presence: true
   validates :username, uniqueness: true, presence: true
+
+  mount_uploader :avatar, AvatarUploader
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy

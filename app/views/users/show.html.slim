@@ -2,8 +2,11 @@
   .col-md-6.offset-md-3
     .card
       .card-body
+        - if current_user.id == @user.id
+          .text-center.mb-3
+            = link_to 'edit your account', edit_mypage_account_path, class: 'btn btn-warning'
         .text-center.mb-3
-          = image_tag 'profile-placeholder.png', size: '100x100', class: 'rounded-circle me-1'
+          = image_tag @user.avatar.url, size: '100x100', class: 'rounded-circle me-1'
         .profile.text-center
           = @user.username
         .profile.text-center
