@@ -136,4 +136,34 @@ RSpec.describe "Posts", type: :system do
     end
   end
 
+  describe 'folow' do
+    let!(:user) { create(:user) }
+    let!(:other_user) { create(:user) }
+
+    before do
+      login_as
+    end
+
+    it 'can follow other user' do
+      visit user_path(other_user)
+      expect {
+        within "#follow-area-#{other_user.id}" do
+          click_on 'Follow'
+          expect(page).to have_content 'Unfollow'
+        end
+      }.to change(user.following, :count).by(1)
+    end
+
+    it 'can unfollow other user' do
+      user.follow(other_user)
+      visit user_path(other_user)
+      expect {
+        within "#follow-area-#{other_user.id}" do
+          click_on 'Unfollow'
+          expect(page).to have_content 'Follow'
+        end
+      }.to change(user.following, :count).by(-1)
+    end
+  end
+
 end
