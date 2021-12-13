@@ -476,7 +476,6 @@ DEPENDENCIES
   rspec-rails
   rubocop
   sass-rails (>= 6)
-  selenium-webdriver
   sidekiq
   sinatra
   slim-rails
