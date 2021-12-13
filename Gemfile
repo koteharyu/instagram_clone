@@ -35,6 +35,7 @@ gem 'rails-i18n'
 gem 'carrierwave'
 gem 'kaminari', git: 'https://github.com/kaminari/kaminari'
 gem 'config'
+gem 'meta-tags'
 
 
 group :development, :test do
