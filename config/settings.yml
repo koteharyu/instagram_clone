@@ -1,0 +1,10 @@
+meta:
+  site: Instagram_clone
+  title: Instagram_clone ~ by haryu ~
+  description: インスタのクローンアプリを作ってみました
+  keywords:
+    - Rails
+    - Instagtram
+  og:
+    type: website
+    image_path: /images/default.png
