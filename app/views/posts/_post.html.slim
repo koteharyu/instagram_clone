@@ -1,13 +1,13 @@
-.card.mb-5.post
+.card.mb-5.post id="post-#{post.id}"
   .card-header
     .d-flex.align-items-center
       = link_to user_path(post.user) do
         = image_tag post.user.avatar.url, size: '40x40', class: 'rounded-circle mr-1'
         = post.user.username
       - if current_user&.own?(post)
-        = link_to edit_post_path(post), class: 'ml-auto' do
+        = link_to edit_post_path(post), class: 'ml-auto edit-button' do
           = icon 'far', 'edit', class: 'fa-lg'
-        = link_to post_path(post), method: :delete, data: { confirm: "are u sure? "} do
+        = link_to post_path(post), method: :delete, class: 'delete-button', data: { confirm: "are u sure? "} do
           = icon "far", "trash-alt", class: "fa-lg ml-2"
       - if current_user && !current_user&.own?(post)
         = render 'like_area', post: post
