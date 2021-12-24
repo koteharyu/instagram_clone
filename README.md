@@ -1,24 +1,36 @@
-# README
+# 使用した技術一覧
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## バックエンド
+・Ruby 3.0.0
+・Rails 6.1.4
+・PostgreSQL
+・RSpec
+・slim
+・redis
+　 ・sessionをredisで管理するようにしました。
+・ActiveStorageを使った画像アップロード
+・ActionMailerを使ったメール機能
+  ・sidekiqを使ってメールのジョブを永続化しました。
 
-Things you may want to cover:
+## フロントエンド
+・ HTML/CSS
+・Bootstrap 4.2.1
+・jQuery
+・JavaScript
+・Slick(画像のスワイプ機能)
 
-* Ruby version
+## その他
+・git flow を採用し、実際の開発を想定して進めました。
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 機能一覧
+・sorceryを利用したユーザー認証機能
+・ユーザー情報の更新(ユーザー名、アバター画像)
+  ・画像選択時のプレビュー機能
+・画像と本文を含むPostのCRUD機能
+・投稿に対するいいね機能(Ajax)
+・投稿に対するコメント機能(Ajax)
+  ・モーダルとAjaxを使ったコメント更新機能
+  ・コメントの削除機能(Ajax)
+・ユーザー間のフォロー機能
+・ポリーモーフィック関連を使った通知機能（いいねされた時、コメントされた時、フォローされた時）
+  ・メール通知機能（オン・オフ切り替え可能）
